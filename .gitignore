@@ -1,3 +1,6 @@
+# passwords and keys
+config.py
+
 # node-modules
 *node_modules/*
 

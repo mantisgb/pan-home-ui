@@ -1,5 +1,4 @@
 from flask import Flask, render_template,request
-import config
 import os,subprocess
 # import xml.etree.ElementTree as ET
 
@@ -9,8 +8,7 @@ password="Pasquale123"
 ################################################################
 ## create API token and store as tag called pasq-vm in .panrc ##
 ################################################################
-b="panxapi.py -t pasq-vm -h " + config.myip + " -l " + config.user + ":" + config.pwd + " -k >>~/.panrc"
-
+b="panxapi.py -t pasq-vm -h 10.14.0.4 -l pasquale:" + password + " -k >>~/.panrc"
 os.system(b)
 
 # Open file read-only (r) with all categories.
