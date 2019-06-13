@@ -1,10 +1,8 @@
 from flask import Flask, render_template,request
 import config
 import os,subprocess
-# import xml.etree.ElementTree as ET
 
 app = Flask(__name__)
-password="Pasquale123"
 
 ################################################################
 ## create API token and store as tag called pasq-vm in .panrc ##
