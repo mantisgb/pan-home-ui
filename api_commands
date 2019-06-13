@@ -1,0 +1,18 @@
+panxapi.py -t pasq-vm -h 10.14.0.4 -l pasquale:"J:q'>)4vjH7\"sn],?+T:>f6&@Re\")F" -k>> ~/.panrc
+panxapi.py -t pasq-vm -h 10.14.0.4 -l pasquale:Pasquale123 -k>> ~/.panrc
+panxapi.py -t pasq-vm -xg "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/url-filtering/entry[@name='test']"
+
+panxapi.py -t pasq-vm -pg "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/url-filtering/entry[@name='test']"
+to parse the output(python nested dictionary):
+print var1['response']['result']['entry'][0]['continue']['member']
+
+note that the API defaults to only showing categories that are not set to allow
+
+
+
+
+commit
+panxapi.py -t pasq-vm -xr --sync -C "<commit></commit>"
+
+set command for URL filtering profile
+panxapi.py -t pasq-vm -S '<member>games</member>' "/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/url-filtering/entry[@name='test']/block"

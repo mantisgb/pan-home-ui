@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+	<head>
+            <title>Palo Alto Networks API demo</title>
+        </head>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<style>
+	a,body,p,h1,h2,h3 {font-family: "Raleway", sans-serif}
+	</style>
+        <body>
+
+<script type="text/javascript">
+	function jsFunction(category, value)
+	{
+	    var xmlHttp = new XMLHttpRequest();
+	    xmlHttp.onreadystatechange = function() { 
+		if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+		    callback(xmlHttp.responseText);
+	    }
+	    xmlHttp.open("GET", "/urlchange?category="+category+"&action=" + value, true); // true for asynchronous 
+	    xmlHttp.send(null);
+	}
+</script>
+
+	<div class="w3-card-4">
+	<img src="/static/hsbc-logo.png" style="width:30%">
+	</div>
+            <h1>Home Security : URL filtering</h1>
+
+        <br>
+        <table>
+    	<thead>
+    	<tr>
+       	<th>Category</th>
+	<th>Action</th>
+    	</tr>
+    	</thead>
+    	<tbody>
+	<tr>
+	{% for category in categories %}
+		<tr>
+		<td>{{ category[0] }}</td>
+		<td align="center">
+		<select id="{{ category[0] }}" onchange="jsFunction(this.id, this.value);" width="144" style="height:19px; width:140px; text-align:center;">
+		<option id="ACT1">{{ category[1] }}</option>
+		<option id="ACT2">continue</option>
+		<option id="ACT3">block</option>
+		<option id="ACT4">alert</option>
+		<option>override</option>
+		</select>
+		</td>
+		</tr>
+		</td>
+		</tr>
+	{% endfor %}
+        </td>
+        </tr>
+   	</tbody>
+  	</table>
+        <br><br>
+
+           <form>
+	  	<a href=# id=commit><button class='btn btn-default'>Commit</button></a> 
+           </form>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#commit').bind('click', function() {
+            $.getJSON('/commit',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
+
+</body>
+</html>
