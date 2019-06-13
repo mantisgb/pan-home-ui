@@ -41,7 +41,7 @@ def urlchange():
     os.system(b);
     return ""
 
-# Now we query the VM for the url categories values that are not set to allow.
+# Now we query the VM for the URL categories values that are not set to allow.
 # Note the API doesn't return categories set to allow
 b="panxapi.py -t pasq-vm -pg \"/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/url-filtering/entry[@name='test']\""
 c=subprocess.check_output(b, shell=True);
