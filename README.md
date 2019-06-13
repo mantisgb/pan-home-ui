@@ -7,15 +7,17 @@ Assumes that you have installed Flask and Python on your system.
 
 You will need to create a config.py file with the following variables relating to the test firewall you are working with
 (I'm assuming you have a PAN-OS firewall running > v8.1 code). Obviously put actual values in the quotes :)
+```
 user = ""<br/>
 pwd = ""<br/>
 myip = ""<br/>
+```
 
 Flask wants an environment variable to define the app 
-export FLASK_APP=app.py
+`export FLASK_APP=app.py`
 
 Run the server (note the warning displayed about development only!)
-flask run --host=0.0.0.0
+`flask run --host=0.0.0.0i`
 
 The --host switch will enable you to connect to the server from a remote host.
 
