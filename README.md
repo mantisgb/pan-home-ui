@@ -13,7 +13,7 @@ flask run --host=0.0.0.0
 
 The --host switch will enable you to connect to the server from a remote host.
 
-Connect using "http://<Server IP>:5000/"
+Connect using "http://\<Server IP\>:5000/
 
 The project assumes that you also have a PAN-OS based firewall that is the target of the API calls.
 Modify app.py to suit your own testing environment.
