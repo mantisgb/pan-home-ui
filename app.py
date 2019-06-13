@@ -45,4 +45,4 @@ def urlchange():
 # Note the API doesn't return categories set to allow
 b="panxapi.py -t pasq-vm -pg \"/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/profiles/url-filtering/entry[@name='test']\""
 c=subprocess.check_output(b, shell=True);
-print c;
+print(c)
